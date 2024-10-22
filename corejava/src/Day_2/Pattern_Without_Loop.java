@@ -1,28 +1,5 @@
-package Day_2;
+4.find average salaries of all employees
+SQL> SELECT AVG(SAL) FROM EMP;
 
-public class Pattern_Without_Loop {
-
-
-	public static void main(String[]args) {
-		System.out.println("@@@@@@@@@@@");
-		System.out.println("@@       @@");
-		System.out.println("@@       @@");
-		System.out.println("@@       @@");
-		System.out.println("@@       @@");
-		System.out.println("@@       @@");
-		System.out.println("@@       @@");
-		System.out.println("@@@@@@@@@@@");
-	}
-
-}
-/*
-@@@@@@@@@@@
-@@       @@
-@@       @@
-@@       @@
-@@       @@
-@@       @@
-@@       @@
-@@@@@@@@@@@
-*/
-
+5.find average salries of all clerks
+SQL>SELECT AVG (SAL) FROM EMP WHERE JOB ='CLERK';
