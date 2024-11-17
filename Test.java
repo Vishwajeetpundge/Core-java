@@ -1,17 +1,22 @@
-package Day_11;
-
+package Day_23;
+import java.util.Scanner;
 public class Test {
-	public static void main(String[]args)
+
+		public static void main(String[] args) 
 	{
-		Car car = new Car("BMW","M4",2022,4);
-		System.out.println("Car Details:");
-		car.displayDetails();
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a Number :");
+		int num = sc.nextInt();
 		
-		Bike bike = new Bike("KTM","DUKE-390",2021,"Racing");
-		System.out.println("\nBike Details:");
-		bike.displayDetails();
-		
-		
+	    boolean isEven = EvenOrOdd.isEven(num);
+	    System.out.println(num+" is Even ?:"+isEven);
+	    
+	    System.out.print("Enter another Number :");
+		num = sc.nextInt();
+	    
+	    isEven = EvenOrOdd.isEven(num);
+	    System.out.println(num+" is Even ?:"+isEven);
+	    sc.close();
 	}
 
 }
