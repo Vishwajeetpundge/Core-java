@@ -1,67 +1,40 @@
-package overriding_class;
-
-
-abstract class Car{
-	String brand;
-	String model;
-	int milage;
-	int top_speed;
-	int yearOfManufacturing;
-	
-	public Car(String brand, String model, int milage, int top_speed, int yearOfManufacturing) {
-		super();
-		this.brand = brand;
-		this.model = model;
-		this.milage = milage;
-		this.top_speed = top_speed;
-		this.yearOfManufacturing = yearOfManufacturing;
-	}
-	public String carBrand() {
-		return brand;
-	}
-	public String carModel() {
-		return model;
-	}
-	public int carMileage(){
-		return milage;
-	}
-	public int carTopSpeed() {
-		return top_speed;
-	}
-	public int carYear() {
-		return yearOfManufacturing;
-	}
-	public abstract void display();
-	
-}
-class Past extends Car{
-
-	public Past(String brand, String model, int milage, int top_speed, int yearOfManufacturing) {
-		super(brand, model, milage, top_speed, yearOfManufacturing);
-		 
-	}
-
-	@Override
-	public void display() {
-		 System.out.println("Car Brand : "+super.carBrand());
-		 System.out.println("Car Model : "+super.carModel());
-		 System.out.println("Car Milage : "+super.carMileage());
-		 System.out.println("Car Top Speed : "+super.carTopSpeed());
-		 System.out.println("Car Year Of Manufacturing : "+super.carYear());
-	}
-	
-	
-
-}
-
+package My_Package.O1.com;
 
 public class CarTest {
-
-	public static void main(String[] args) {
-	 
-		Car ca=new Past("Toyota","Mk-5",4,300,2020);
-		ca.display();
+	
+	public static void stop(String msg) throws CarStoppedException
+	{
+		if(msg.equalsIgnoreCase("stop"))
+		{
+			throw new CarStoppedException("CarStoppedException OCCURED");
+		}
+		else 
+		{
+			System.out.println("Car is moving");
+		}
+	}
+	
+	public static void puncture(String msg) throws CarPunctureException
+	{
+		if(msg.equalsIgnoreCase("Puncture"))
+		{
+			throw new CarPunctureException("CarPunctureException OCCURED");
+		}
+		else {
+			System.out.println("Car is not punctured");
+		}
+	}
+	
+	public static void carHeat(Integer temp) throws CarHeatException
+	{
+		if(temp>50)
+		{
+			throw new CarHeatException("CarHeatException OCCURED");
+		}
+		else
+		{
+			System.out.println("temprature is Ok");
+		}
 	}
 
 }
-
