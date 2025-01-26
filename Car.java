@@ -1,22 +1,30 @@
-package Day_11;
+package My_Package.O1.com;
 
-public class Car extends Vehicle{
-	int CarDoors;
 
-	public Car(String Make, String Model, int Year,int CarDoors) {
-		
-	super(Make,Model,Year);
-	if(CarDoors <=0) {
-		System.out.println("Error Invalid Input");
-		System.exit(0);
+
+public class Car implements Runnable{
+	String name;
+	PetrolPump petrolPump;
+	
+	public Car(String name, PetrolPump petrolPump) {
+		super();
+		this.name = name;
+		this.petrolPump = petrolPump;
 	}
-	this.CarDoors = CarDoors;
-}
- 
-	public void displayDetails() {
-		System.out.println("Car :"+super.Make);
-		System.out.println("Car Model :"+super.Model);
-		System.out.println("Car Year :"+super.Year);
-		System.out.println("No. of Doors :"+this.CarDoors);
+
+	@Override
+	public void run() {
+		petrolPump.refillCar(name);		
 	}
+
 }
+
+/*
+Car Class:
+
+Create a Car class that implements the Runnable interface. Include the following members:
+name (String): The name of the car.
+petrolPump (PetrolPump): A reference to the petrol pump.
+run(): Implement the run method from the Runnable interface. Inside this method, call the refillCar method of the petrol pump to simulate the refilling process.
+
+*/
